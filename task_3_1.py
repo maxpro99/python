@@ -14,3 +14,4 @@ def percent_str(in_number):
 #Берем чуть больше 20, поскольку именно окончания внутри второго десятка отличны от других
 for num in range(31):
     print(num, percent_str(num))
+    print(num, percent_str(num))

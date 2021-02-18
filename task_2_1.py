@@ -21,6 +21,7 @@ def sum_only_div(array, div):
     return out_sum
 
 
+
 # Задание 2: Создаём список, состоящий из кубов нечетных чисел
 for num in range(1, 100, 2):
     odd_numbers_cube.append(num ** 3)
