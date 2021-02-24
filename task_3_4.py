@@ -1,4 +1,4 @@
-def thesaurus_adv(*args, sort=False):
+def thesaurus_adv(*args):
     """
     Return dict with key first char form Last_Name
     and value is dict with key first char from First_Name
@@ -11,13 +11,15 @@ def thesaurus_adv(*args, sort=False):
              and value is "First_Name Second_Name"
     """
     name_dict = {}
-    for name in args:
-        if not name_dict.setdefault(name.split()[1][0], {name.split()[0][0]: [name]}) == [name]:
-            name_dict[name.split()[1][0]][name.split()[0][0]].append(name)
-    print(name_dict)
-
+    for current_name in args:
+        a, b = current_name.split()[1][0], current_name.split()[0][0]
+        if not name_dict.setdefault(a, {b: [current_name]}) == {b: [current_name]}:
+            if name_dict[a].get(b) is None:
+                name_dict[a].setdefault(b, [current_name])
+            else:
+                name_dict[a][b].append(current_name)
     return name_dict
 
 
-
-print(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"))
+my_dict = thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева", "Алик Алексеев")
+print(my_dict)
