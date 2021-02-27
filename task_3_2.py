@@ -26,4 +26,5 @@ def num_translate(s=''):
         res = _res[0].upper() + _res[1:]
     return res
 
+
 print('num_translate :', num_translate('TeN'))
