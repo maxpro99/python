@@ -31,3 +31,22 @@ import os
 import shutil
 
 
+def copy_dir(from_dir, to_dir):
+    for root, dirs, files in os.walk(from_dir):
+        for n_dirs in dirs:
+            if not os.path.exists(os.path.join(to_dir, n_dirs)):
+                os.mkdir(os.path.join(to_dir, n_dirs))
+        for n_file in files:
+            shutil.copy2(os.path.join(root, n_file), os.path.join(to_dir, root.replace(from_dir, "")[1:], n_file))
+
+
+root_dir = 'my_project'
+dir_name = 'templates'
+if not os.path.exists(os.path.join(root_dir, dir_name)):
+    os.mkdir(os.path.join(root_dir, dir_name))
+
+# идем по всем папкам, кроме той, в которую копируем
+# Если находим такое-же имя, то копируем всё в нашу папку
+for root, dirs, files in os.walk(root_dir):
+    if dir_name in dirs and root != root_dir:
+        copy_dir(os.path.join(root, dir_name), os.path.join(root_dir, dir_name))

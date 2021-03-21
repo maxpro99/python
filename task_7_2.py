@@ -39,9 +39,8 @@ for line in data:
     # И это опять плохая практика
     if '.' in path[level]:
         with open(os.path.join(*path), 'x', encoding='utf-8') as f:
-            f.write('я файлик')
+            f.write(f'я файлик из {os.path.join(*path)}')
     else:
         if not os.path.exists(os.path.join(*path)):
             os.mkdir(os.path.join(*path))
     last_level = level
-
