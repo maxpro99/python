@@ -11,20 +11,31 @@
 # Например: 20 м*5000 м*25 кг*5 см = 12500 т.
 
 class Road:
-    def __init__(self, length, width):
-        self.__length = length
-        self._width = width
+    def __init__(self, road_width, road_length):
+        self._length = road_length
+        self._width = road_width
 
     def road_mass(self, thickness):
-        return self.__length * self._width * 25 * thickness / 1000
+        return self._length * self._width * 25 * thickness / 1000
 
 
 my_road = Road(20, 5000)
-print(my_road.road_mass(5), 'тн')
+# Так сделать не получится, поскольку аттрибуты защищенные
+# print(f'Масса дороги длиной {my_road._length} и шириной {my_road.width} при '
+#       f' толщине асфальта 5 см составит: {my_road.road_mass(5)} тн.')
+# И хоть к ним в Python и можно получить доступ, но мы так делать не будем
+
+# Поэтому делаем так:
+print(f'Масса дороги шириной 20м и длиной 5000м при '
+      f'толщине асфальта 5 см составит: {my_road.road_mass(5)} тн.')
 
 my_road_1 = Road(40, 5000)
-print(my_road_1.road_mass(5), 'тн')
+print(f'Масса дороги шириной 40м и длиной 5000м при '
+      f'толщине асфальта 5 см составит: {my_road_1.road_mass(5)} тн.')
 
-my_road_2 = Road(40, 10000)
-print(my_road_2.road_mass(10), 'тн')
-
+# Ну или так:
+length = 10000
+width = 40
+my_road_2 = Road(width, length)
+print(f'Масса дороги шириной {width}м и длиной {length}м при '
+      f'толщине асфальта 5 см составит: {my_road_2.road_mass(5)} тн.')

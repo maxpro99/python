@@ -9,12 +9,14 @@
 # создать экземпляры класса Position, передать данные,
 # проверить значения атрибутов, вызвать методы экземпляров.
 
+
 class Worker:
     def __init__(self, name, surname, position, income_wage, income_bonus):
         self.name = name
         self.surname = surname
         self.position = position
         self._income = {"wage": income_wage, "bonus": income_bonus}
+
 
 class Position(Worker):
     def get_full_name(self):
@@ -25,9 +27,9 @@ class Position(Worker):
 
 
 python_student = Position('Ivanov', 'Ivan', 'Firestarter', 0, 1000000)
-manual_writer = Position('Stupidov', 'Purga-ogly', '-', 100000000, -100000001)
+manual_writer = Position('Stupov', 'Roman', '-', 100000, -50000)
 
-print(python_student.get_full_name())
-print(python_student.get_total_income())
-print(manual_writer.get_full_name())
-print(manual_writer.get_total_income())
+print('Имя и фамилия: python_student.get_full_name():', python_student.get_full_name())
+print('Его доход: python_student.get_total_income():', python_student.get_total_income())
+print('Имя и фамилия manual_writer.get_full_name():', manual_writer.get_full_name())
+print('Его доход: manual_writer.get_total_income():', manual_writer.get_total_income())

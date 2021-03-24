@@ -23,25 +23,23 @@ class Car:
         self.name = name
         self.is_police = is_police
 
-
     def go(self):
-        print(f'{self.name} Поехала')
-
+        print(f'{self.name} поехала')
 
     def stop(self):
-        print(f'{self.name} Остановилась')
-
+        print(f'{self.name} остановилась')
 
     def turn(self, direction):
-        print(f'{self.name} повернула {self.direction}')
+        print(f'{self.name} повернула {direction}')
 
     def show_speed(self):
-        print(f'Скорость {self.name} составляет {self.direction} км/ч')
+        print(f'Скорость {self.name} составляет {self.speed} км/ч')
+
 
 class TownCar(Car):
     def show_speed(self):
         if self.speed < 60:
-            print(f'Скорость {self.name} составляет {self.direction} км/ч')
+            print(f'Скорость {self.name} составляет {self.speed} км/ч')
         else:
             print(f'Скорость {self.name} превысила порог 60 км/ч')
 
@@ -54,9 +52,9 @@ class SportCar(Car):
 class WorkCar(Car):
     def show_speed(self):
         if self.speed < 40:
-            print(f'Скорость {name} составляет {self.direction} км/ч')
+            print(f'Скорость {self.name} составляет {self.speed} км/ч')
         else:
-            print(f'Скорость {name} превысила порог 40 км/ч')
+            print(f'Скорость {self.name} превысила порог 40 км/ч')
 
 
 class PoliceCar(Car):
@@ -66,11 +64,23 @@ class PoliceCar(Car):
 
 car_1 = TownCar(100, 'Red', 'Leaf', is_police=False)
 car_2 = SportCar(110, 'Color', 'MarkII', is_police=True)
-car_3 = WorkCar(120, 'Orange', 'Kamaz', is_police=False)
+car_3 = WorkCar(120, 'Orange', 'Gazelle', is_police=False)
 car_4 = PoliceCar(130, 'Blue', 'Vesta', is_police=True)
+
+car_1.go()
+car_2.turn('Зюй-Зюйд-Вест')
+car_3.stop()
 
 car_1.show_speed()
 car_2.show_speed()
 car_3.show_speed()
 car_4.show_speed()
 
+if car_1.is_police:
+    print(f'Окзалось, что {car_1.name} - машина полиции.')
+if car_2.is_police:
+    print(f'Окзалось, что {car_2.name} - машина полиции.')
+if car_3.is_police:
+    print(f'Окзалось, что {car_3.name} - машина полиции.')
+if car_4.is_police:
+    print(f'Окзалось, что {car_4.name} - машина полиции.')
