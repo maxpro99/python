@@ -69,22 +69,22 @@ class Cell:
 
 
 my_cell_0 = Cell(6)
-print('my_cell_0.make_order(3)')
+print('my_cell_0 = Cell(6) --> my_cell_0.make_order(3)')
 print(my_cell_0.make_order(3))
 
 my_cell_1 = Cell(7)
-print('my_cell_1.make_order(2)')
+print('my_cell_1 = Cell(7) --> my_cell_1.make_order(2)')
 print(my_cell_1.make_order(2))
 
 my_cell_2 = Cell(2)
-print('my_cell_2.make_order(4)')
+print('my_cell_2 = Cell(2) --> my_cell_2.make_order(4)')
 print(my_cell_2.make_order(4))
 
 print('(my_cell_2 + my_cell_0).make_order(10)')
 print((my_cell_2 + my_cell_0).make_order(10))
 
 my_cell_3 = my_cell_1 - my_cell_2
-print('my_cell_3.make_order(2)')
+print('my_cell_3 = my_cell_1 - my_cell_2 --> my_cell_3.make_order(2)')
 print(my_cell_3.make_order(2))
 
 print('(my_cell_2 * my_cell_0).make_order(10)')

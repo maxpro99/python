@@ -45,7 +45,9 @@ class Suite(AbstractClothes):
 
 my_coat = Coat(54)
 my_suite = Suite(185)
+print('my_coat.tissue_consumption()')
 print(my_coat.tissue_consumption())
+print('my_suite.tissue_consumption')
 print(my_suite.tissue_consumption)
 
 # т.е. абстрактные методы не спасают интерфейс от неодинаковости))))))))))
